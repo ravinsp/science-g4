@@ -123,7 +123,7 @@ const App = (() => {
         W.h('span', { class: 'lc-num' }, String(ls.number)),
         W.h('span', { class: 'lc-icon' }, ls.icon || '📘'),
         W.h('span', { class: 'lc-title' }, ls.title),
-        W.h('span', { class: 'lc-sub' }, ready ? (ls.subtitle || '') : 'Coming soon'),
+        W.h('span', { class: 'lc-sub' }, ready ? (ls.subtitle || '') : 'Unavailable'),
         ready ? W.h('span', { class: 'lc-bar' }, W.h('span', { style: `width:${pct}%` })) : null,
         ready ? W.h('span', { class: 'lc-go' }, pct ? `Carry on · ${pct}%` : 'Start ▶') : null);
       if (ready) card.addEventListener('click', () => startLesson(ls));
@@ -218,12 +218,10 @@ const App = (() => {
       ['tgl-sound', 'sound', v => { Sfx.enabled = v; }],
       ['tgl-voice', 'voice', v => { Voice.enabled = v; }],
       ['tgl-auto', 'auto', () => {}],
-      ['tgl-nature', 'nature', v => { Sfx.setNature(v); }],
     ];
     toggles.forEach(([id, key, apply]) => {
       const b = $(id);
-      const def = key === 'nature' ? false : true;
-      const cur = st[key] == null ? def : st[key];
+      const cur = st[key] == null ? true : st[key];
       b.classList.toggle('on', cur); apply(cur);
       b.addEventListener('click', () => {
         const v = !b.classList.contains('on');

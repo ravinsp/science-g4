@@ -5,7 +5,7 @@
 //   2. Put chapter files in it. Each one calls App.chapter({ id, title, icon, group, keywords, steps })
 //      (copy one from lessons/lesson-2/chapters/ to start).
 //   3. Fill in its entry below: list the chapter files in the order they should appear.
-// A lesson with no chapter files shows as "Coming soon".
+// A lesson with no chapter files shows as "Unavailable".
 
 App.addLesson({
   id: 'lesson-1',
@@ -44,5 +44,29 @@ App.addLesson({
     'chapters/15-fertiliser.js',
     'chapters/16-botanists.js',
     'chapters/17-review.js',
+  ],
+});
+
+App.addLesson({
+  id: 'lesson-3',
+  number: 3,
+  title: 'Skeleton and muscles',
+  subtitle: 'Bones, joints, muscles and keeping them healthy',
+  icon: '🦴',
+  color: '#7E57C2',
+  path: 'lessons/lesson-3/',
+  pages: 40,                // total pages, for the progress bar before the lesson loads
+  chapters: [
+    'body.js',              // shared drawings (skeleton, organs, muscles), not a chapter
+    'chapters/01-intro.js',
+    'chapters/02-support.js',
+    'chapters/03-protection.js',
+    'chapters/04-movement.js',
+    'chapters/05-elbows-knees.js',
+    'chapters/06-more-joints.js',
+    'chapters/07-muscles.js',
+    'chapters/08-contracting.js',
+    'chapters/09-healthy.js',
+    'chapters/10-review.js',
   ],
 });

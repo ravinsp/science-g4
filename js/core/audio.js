@@ -2,7 +2,6 @@
 const Sfx = (() => {
   let ctx = null, master = null, noiseBuf = null;
   let enabled = true;
-  let natureTimer = null;
 
   function init() {
     if (ctx) { if (ctx.state === 'suspended') ctx.resume(); return; }
@@ -99,21 +98,8 @@ const Sfx = (() => {
     if (s) try { s(); } catch (e) { /* ignore audio glitches */ }
   }
 
-  // Gentle random birdsong in the background
-  function setNature(on) {
-    clearInterval(natureTimer);
-    natureTimer = null;
-    if (!on) return;
-    natureTimer = setInterval(() => {
-      if (!ctx || !enabled || Math.random() < 0.45) return;
-      const n = 2 + Math.floor(Math.random() * 3);
-      const base = rnd(2600, 4200);
-      for (let i = 0; i < n; i++) tone({ f: base, f2: base * rnd(0.7, 1.4), dur: 0.08, vol: 0.025, delay: i * 0.12 });
-    }, 1400);
-  }
-
   return {
-    init, play, tone, noise, setNature,
+    init, play, tone, noise,
     get enabled() { return enabled; },
     set enabled(v) { enabled = !!v; },
   };
