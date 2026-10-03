@@ -70,3 +70,30 @@ App.addLesson({
     'chapters/10-review.js',
   ],
 });
+
+App.addLesson({
+  id: 'lesson-4',
+  number: 4,
+  title: 'Solids, liquids and gases',
+  subtitle: 'States of matter, temperature and changing state',
+  icon: '🧊',
+  color: '#1E88E5',
+  path: 'lessons/lesson-4/',
+  pages: 61,                // total pages, for the progress bar before the lesson loads
+  chapters: [
+    'matter.js',            // shared drawings (thermometers, ice, glasses), not a chapter
+    'chapters/01-intro.js',
+    'chapters/02-solids.js',
+    'chapters/03-liquids.js',
+    'chapters/04-gases.js',
+    'chapters/05-solid-liquid-gas.js',
+    'chapters/06-comparing-liquids.js',
+    'chapters/07-temperature.js',
+    'chapters/08-using-thermometer.js',
+    'chapters/09-changing-state.js',
+    'chapters/10-states-of-water.js',
+    'chapters/11-more-water.js',
+    'chapters/12-accurate.js',
+    'chapters/13-review.js',
+  ],
+});

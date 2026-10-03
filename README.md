@@ -32,6 +32,7 @@ Type a name, then click a lesson card.
 | 1 | — | Unavailable (placeholder) |
 | 2 | Growing plants | 17 topics, 62 pages |
 | 3 | Skeleton and muscles | 10 topics, 40 pages |
+| 4 | Solids, liquids and gases | 13 topics, 61 pages |
 
 Each lesson ends with a review: a word game, a 12-question quiz and a printable certificate.
 
